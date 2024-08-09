@@ -7,7 +7,7 @@ import Image from "next/image";
 //gsap.registerPlugin(ScrollToPlugin);
 //gsap.registerPlugin(useGSAP);
 import Users from "@/components/flaskcomponents/Users";
-
+import TestConvex from "../components/TestConvex";
 import Login from "./login/page";
 import { useAuthStore } from "@/utils/zustand/auth.store";
 import { useRouter } from "next/navigation";
@@ -51,6 +51,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-between w-full">
       <div className="z-10 h-screen">
+        <TestConvex />
         {/*<button id="scrollButton">Scroll to Section 2</button>
           <div className="content">
             <section id="section1" className="bg-green-400 h-screen">

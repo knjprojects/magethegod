@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
-
+import ConvexClerkProvider from "./providers/ConvexClerkProvider";
 export const metadata: Metadata = {
   title: "Blog With Mage",
   description: "Blog With Mage",
@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        {children}
+        <ConvexClerkProvider>{children}</ConvexClerkProvider>
       </body>
     </html>
   );
