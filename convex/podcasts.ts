@@ -141,7 +141,9 @@ export const getPodcastBySearch = query({
 
     const authorSearch = await ctx.db
       .query("podcasts")
-      .withSearchIndex("search_author", (q) => q.search("author", args.search))
+      .withSearchIndex("search_author", (q: any) =>
+        q.search("author", args.search)
+      )
       .take(10);
 
     if (authorSearch.length > 0) {
@@ -150,7 +152,7 @@ export const getPodcastBySearch = query({
 
     const titleSearch = await ctx.db
       .query("podcasts")
-      .withSearchIndex("search_title", (q) =>
+      .withSearchIndex("search_title", (q: any) =>
         q.search("podcastTitle", args.search)
       )
       .take(10);
@@ -161,7 +163,7 @@ export const getPodcastBySearch = query({
 
     return await ctx.db
       .query("podcasts")
-      .withSearchIndex("search_body", (q) =>
+      .withSearchIndex("search_body", (q: any) =>
         q.search("podcastDescription" || "podcastTitle", args.search)
       )
       .take(10);
