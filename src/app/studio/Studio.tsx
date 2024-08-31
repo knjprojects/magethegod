@@ -5,7 +5,7 @@
 import { NextStudio } from "next-sanity/studio";
 import { StudioProvider, StudioLayout, StudioComponents } from "sanity";
 
-import defineConfig from "../../sanity/sanity.config";
+import defineConfig from "@/utils/sanity/sanity.config";
 
 const Studio = () => {
   return (
